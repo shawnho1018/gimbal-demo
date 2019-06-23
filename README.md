@@ -1,9 +1,11 @@
 ## This Project is a showcase for joint service between two K8S clusters.
 
-## 1. Prepare 3 K8s Clusters and its corresponding context
+## 1. Prepare three K8s Clusters and its corresponding context
 * Create 3 K8S clusters: frontend, gimbal1, gimbal2. 
-* Get their individual kubeconfig. If you're using Enterprise pks, use ```pks get-credentials gimbal1
-
+* Get their individual kubeconfig. If you're using Enterprise pks, use 
+```
+pks get-credentials gimbal1
+```
 ## 2. Deploy hello-kubernetes in the backends
 ```
 kubectl apply -f 02-deploy-hello.yaml --context gimbal1 
@@ -18,7 +20,7 @@ kubectl apply -f install/01-common.yaml
 ## 4. Deploy secrets at each clusters:
 * Run install/01-add-secret.sh gimbal1
 * Run install/01-add-secret.sh gimbal2
-### two files will be produced: gimbal1-discoverer.yaml and gimbal2-discoverer.yaml
+### Two files will be produced: gimbal1-discoverer.yaml and gimbal2-discoverer.yaml
 ```
 kubectl apply -f gimbal1-discoverer.yaml,gimbal2-discoverer.yaml --context frontend
 ```
