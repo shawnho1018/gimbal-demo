@@ -5,6 +5,8 @@
 * Get their individual kubeconfig. If you're using Enterprise pks, use 
 ```
 pks get-credentials gimbal1
+pks get-credentials gimbal2
+pks get-credentials frontend
 ```
 ## 2. Deploy hello-kubernetes in the backends
 ```
