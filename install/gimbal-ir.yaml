@@ -1,0 +1,18 @@
+# weight-shfiting.ingressroute.yaml
+apiVersion: contour.heptio.com/v1beta1
+kind: IngressRoute
+metadata:
+  name: weight-shifting
+  namespace: default
+spec:
+  virtualhost:
+    fqdn: hello.syspks.com
+  routes:
+    - match: /
+      services:
+        - name: gimbal1-hello-kubernetes
+          port: 80
+          weight: 50
+        - name: gimbal2-hello-kubernetes
+          port: 80
+          weight: 50
